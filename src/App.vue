@@ -14,6 +14,9 @@ const variants = ref([
 ])
 
 const cart = ref(0)
+
+const addToCart = () => cart.value += 1
+
 </script>
   
 <template>
@@ -34,10 +37,11 @@ const cart = ref(0)
         <div
           v-for="variant in variants"
           :key="variant.id"
+
         >
           {{ variant.color }}
         </div>
-        <button class="button">Add to Cart</button>
+        <button class="button" @click=addToCart>Add to Cart</button>
       </div>
     </div>
   </div>
